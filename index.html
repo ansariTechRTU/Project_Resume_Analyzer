@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume/CV Analyzer - Optimize Your Job Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen font-['Inter']">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Resume Analyzer
+                    </h1>
+                    <p class="text-sm text-gray-500">Match your CV to job descriptions</p>
+                </div>
+            </div>
+            <button class="hidden md:flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>How it works</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Optimize Your Resume for Success
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Upload your CV and job description to get instant insights on skill matches,
+                gaps, and improvement suggestions powered by AI.
+            </p>
+        </div>
+
+        <!-- Upload Card -->
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+
+                <!-- Step Indicators -->
+                <div class="flex items-center justify-center mb-8 space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold">1</div>
+                        <span class="text-sm font-medium text-gray-700">Upload CV</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-300"></div>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-gray-300 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold">2</div>
+                        <span class="text-sm font-medium text-gray-400">Job Description</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-300"></div>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-gray-300 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold">3</div>
+                        <span class="text-sm font-medium text-gray-400">Analyze</span>
+                    </div>
+                </div>
+
+                <!-- Upload Resume Section -->
+                <div class="mb-8">
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        Your Resume/CV
+                    </label>
+                    <div id="resumeDropzone" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition cursor-pointer bg-gray-50 hover:bg-blue-50">
+                        <svg class="w-12 h-12 mx-auto text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                        <p class="text-gray-700 font-medium mb-1">
+                            Drop your resume here or <span class="text-blue-600">browse</span>
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Supports PDF, DOCX (Max 5MB)
+                        </p>
+                        <input type="file" id="resumeInput" class="hidden" accept=".pdf,.docx,.doc">
+                    </div>
+                    <p class="mt-2 text-xs text-gray-500 flex items-start">
+                        <svg class="w-4 h-4 mr-1 flex-shrink-0 text-blue-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Your resume should highlight your skills, experience, and education clearly.</span>
+                    </p>
+                </div>
+
+                <!-- Upload Job Description Section -->
+                <div class="mb-8">
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        Job Description
+                    </label>
+                    <div id="jobDescDropzone" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-purple-500 transition cursor-pointer bg-gray-50 hover:bg-purple-50">
+                        <svg class="w-12 h-12 mx-auto text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <p class="text-gray-700 font-medium mb-1">
+                            Drop job description or <span class="text-purple-600">browse</span>
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Supports TXT, PDF, DOCX (Max 5MB)
+                        </p>
+                        <input type="file" id="jobDescInput" class="hidden" accept=".pdf,.docx,.doc,.txt">
+                    </div>
+                    <p class="mt-2 text-xs text-gray-500 flex items-start">
+                        <svg class="w-4 h-4 mr-1 flex-shrink-0 text-purple-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>You can also paste the job description text directly into a text file.</span>
+                    </p>
+                </div>
+
+                <!-- Alternative: Paste Text Option -->
+                <div class="text-center mb-8">
+                    <button id="togglePasteMode" class="text-sm text-gray-600 hover:text-gray-900 font-medium">
+                        Or paste job description as text
+                        <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="pasteSection" class="hidden mb-8">
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        Paste Job Description
+                    </label>
+                    <textarea
+                        id="jobDescText"
+                        rows="6"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                        placeholder="Paste the full job description here..."></textarea>
+                </div>
+
+                <!-- Analyze Button -->
+                <button id="analyzeBtn" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                    Analyze Resume Match
+                </button>
+
+                <!-- Tutorial/Tooltip Section -->
+                <div class="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-6">
+                    <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                        </svg>
+                        How it works
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 font-bold mr-2">1.</span>
+                            <span>Upload your current resume in PDF or DOCX format</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 font-bold mr-2">2.</span>
+                            <span>Add the job description you're applying for</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 font-bold mr-2">3.</span>
+                            <span>Our AI analyzes the match and provides a detailed report with matched skills, missing skills, and suggestions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 font-bold mr-2">4.</span>
+                            <span>Use the insights to optimize your resume for better chances</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="max-w-6xl mx-auto mt-16">
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">What You'll Get</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Match Score</h4>
+                    <p class="text-sm text-gray-600">Get an instant percentage score showing how well your resume matches the job requirements</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Skill Analysis</h4>
+                    <p class="text-sm text-gray-600">See which skills from the job description you already have and which ones are missing</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Smart Suggestions</h4>
+                    <p class="text-sm text-gray-600">Receive actionable recommendations to improve your resume and increase your match score</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 py-8 border-t border-gray-200 bg-white">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-600">
+            <p>Resume Analyzer &copy; 2024 - Helping job seekers optimize their applications</p>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner (Hidden by default) -->
+    <div id="loadingSpinner" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-sm mx-4 text-center">
+            <div class="spinner mb-4"></div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Analyzing Your Resume</h3>
+            <p class="text-sm text-gray-600">This may take a few moments...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
