@@ -1,6 +1,6 @@
 
 
-**Administrator:** `Abdullah_Ansari`  
+**administrator:** `Abdullah_Ansari`  
 ---
 
 ##  VERY IMPORTANT RULES (FOR TEAM INTEGRATION)
