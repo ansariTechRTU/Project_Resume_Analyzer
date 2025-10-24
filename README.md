@@ -59,6 +59,7 @@ backend/
 └── uploads/                       # Temporary uploaded files
 
 ```
+*Public folder is dummy frontend which i made to test my backend.
 
 ---
 
