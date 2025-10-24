@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results - Resume Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-['Inter'] bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 min-h-screen overflow-x-hidden">
+  <header class="backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Resume Analyzer</h1>
+      <a href="/index.html" class="text-sm text-indigo-600 hover:underline">New Analysis</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-10">
+    <!-- SCORE -->
+    <section class="glass-card p-10 rounded-3xl text-center shadow-xl">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Overall Match Score</h2>
+      <div class="relative inline-flex items-center justify-center">
+        <div class="rounded-full border-[12px] border-indigo-200 w-44 h-44 flex items-center justify-center">
+          <span id="scoreValue" class="text-6xl font-black text-indigo-600">--%</span>
+        </div>
+      </div>
+      <p id="scoreDescription" class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"></p>
+    </section>
+
+    <!-- SKILLS GRID -->
+     
+
+    <section class="grid md:grid-cols-2 gap-8">
+      <div class="glass-card p-8 rounded-3xl shadow-lg">
+        <h3 class="text-2xl font-bold text-green-600 mb-4 flex items-center"><span class="mr-2">✅</span>Matched Skills</h3>
+        <ul id="matchedSkillsList" class="space-y-2 text-gray-800 text-sm"></ul>
+        <p id="matchedSkillsCount" class="mt-4 text-sm font-semibold text-green-600"></p>
+      </div>
+
+      <div class="glass-card p-8 rounded-3xl shadow-lg">
+        <h3 class="text-2xl font-bold text-amber-600 mb-4 flex items-center"><span class="mr-2">⚠️</span>Missing Skills</h3>
+        <ul id="missingSkillsList" class="space-y-2 text-gray-800 text-sm"></ul>
+        <p id="missingSkillsCount" class="mt-4 text-sm font-semibold text-amber-600"></p>
+      </div>
+    </section>
+
+    <!-- SUGGESTIONS -->
+    <section class="glass-card p-8 rounded-3xl shadow-lg">
+      <h3 class="text-2xl font-bold text-purple-600 mb-6 flex items-center"><span class="mr-2">💡</span>AI Suggestions</h3>
+      <div id="suggestionsList" class="space-y-4 text-gray-800 text-sm"></div>
+    </section>
+  </main>
+
+  <footer class="text-center py-10 text-sm text-gray-500">
+    <p>© 2025 Resume Analyzer — Empowering job seekers with AI</p>
+  </footer>
+
+  <script src="results.js"></script>
+</body>
+</html>
