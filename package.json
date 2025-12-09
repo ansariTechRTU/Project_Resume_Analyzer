@@ -1,0 +1,29 @@
+{
+  "name": "project_resume_analyzer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "mammoth": "^1.11.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "openai": "^6.10.0",
+    "pdf2json": "^4.0.0",
+    "pdfjs-dist": "^5.4.449"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
